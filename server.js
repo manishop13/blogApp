@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 const blogRouter = require('./routes/blogs');
 const Blog = require('./models/Blog');
 const app = express();
-const port= process.env.PORT || 5000 
+const port= process.env.PORT || 8000 
 //connect to mongoose
 mongoose.connect('mongodb://localhost:27017/crudblog', {
   useNewUrlParser: true,
@@ -33,5 +33,5 @@ app.use('/blogs', blogRouter);
 
 //listen port
 app.listen(`${port}`,function(req,res){
-  console.log("server is running on port 5000");
+  console.log(`server is running on port ${port}`);
 });
